@@ -67,7 +67,7 @@
       const flagged = window.CIRE_STORAGE.getFlagged();
       const mockHistory = window.CIRE_STORAGE.getMockHistory();
 
-      const answeredKeys = Object.keys(answers);
+      const answeredKeys = Object.keys(answers).filter(id => window.CIRE_QUESTION_BANK.byId.has(id));
       const answeredCount = answeredKeys.length;
       let correctCount = 0;
       answeredKeys.forEach(k => {
@@ -75,7 +75,8 @@
       });
 
       const accuracy = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
-      const totalBank = 3000;
+      const totalBank = window.CIRE_QUESTION_BANK.questions.length;
+      document.querySelectorAll("[data-bank-total]").forEach(el => { el.textContent = totalBank.toLocaleString(); });
 
       // Header Progress
       document.getElementById('headerProgressText').textContent = `${answeredCount.toLocaleString()} / ${totalBank.toLocaleString()}`;
@@ -108,9 +109,9 @@
 
       const statusEl = document.getElementById('readinessStatus');
       if (readinessScore >= 80) {
-        statusEl.textContent = '🌟 Excellent! Exam Ready';
+        statusEl.textContent = '🌟 Strong Practice Progress';
       } else if (readinessScore >= 60) {
-        statusEl.textContent = '👍 On Track to Pass (60%+)';
+        statusEl.textContent = '👍 Building Practice Accuracy';
       } else if (readinessScore >= 30) {
         statusEl.textContent = '📖 Building Foundation';
       } else {
@@ -254,7 +255,7 @@
         </div>
         <div class="bank-q-explanation" id="practiceExpBox" style="display: none; margin-top: 1.5rem;">
           <div id="practiceVerdict" style="font-weight: 800; margin-bottom: 0.5rem;"></div>
-          <strong>Regulatory Explanation:</strong> ${q.explanation}
+          <strong>Regulatory Explanation:</strong> ${window.CIRE_QUESTION_BANK.explanationHTML(q)}
           <div style="margin-top: 1rem; text-align: right;">
             <button class="btn btn-primary" onclick="window.CIRE_APP.nextTopicQuestion()">Next Question →</button>
           </div>
@@ -284,8 +285,8 @@
         }
       }
 
-      verdict.innerHTML = isCorrect 
-        ? `<span style="color: #34d399;">✅ Correct! Well done.</span>` 
+      verdict.innerHTML = isCorrect
+        ? `<span style="color: #34d399;">✅ Correct! Well done.</span>`
         : `<span style="color: #fb7185;">❌ Incorrect. Correct answer is option ${['A','B','C','D'][q.correct]}.</span>`;
 
       expBox.style.display = 'block';

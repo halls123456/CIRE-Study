@@ -19,7 +19,7 @@
         <div class="brand-badge">CIRO</div>
         <div class="brand-text">
           <span class="brand-title">CIRE Master</span>
-          <span class="brand-subtitle">Canadian Investment Regulatory Exam Prep (3,000 Qs)</span>
+          <span class="brand-subtitle">Canadian Investment Regulatory Exam Prep (<span data-bank-total>0</span> questions)</span>
         </div>
       </div>
 
@@ -56,7 +56,7 @@
         </button>
         <div class="user-stats-pill" title="Overall Bank Progress">
           <span class="pill-dot"></span>
-          <span id="headerProgressText">0 / 3,000</span>
+          <span id="headerProgressText">0 / 0</span>
         </div>
       </div>
     </div>
@@ -70,7 +70,8 @@
         <div class="hero-content">
           <div class="syllabus-tag">Official Syllabus: January 2025 • CIRO &amp; Fitch Learning</div>
           <h1>Ready to conquer the CIRE exam?</h1>
-          <p>Master all 9 syllabus elements with 3,000 curated questions, realistic timed 110-question proctored simulations, and instant analytical feedback.</p>
+          <p>Master all 9 syllabus elements with distinct practice questions, timed 110-question practice exams, and instant analytical feedback.</p>
+          <p class="text-muted">Independent practice material. Covers all 99 numbered syllabus outcomes. The 60% score is a practice target. <a href="docs/BANK-REVIEW.html" target="_blank" rel="noopener">Question-bank review</a> · <a href="https://www.ciro.ca/registered-individuals/proficiency/exam-hub/canadian-investment-regulatory-exam-cire" target="_blank" rel="noopener">Official CIRE resources</a></p>
           <div class="hero-buttons">
             <button class="btn btn-primary" onclick="window.CIRE_APP.startNewMockExam()">
               <span>🚀 Launch Full Mock Exam (110 Qs • 2 Hrs)</span>
@@ -103,7 +104,7 @@
             <span class="metric-value" id="statAnswered">0</span>
             <span class="metric-label">Questions Attempted</span>
           </div>
-          <div class="metric-sub" id="statRemaining">3,000 remaining</div>
+          <div class="metric-sub" id="statRemaining">Loading questions</div>
         </div>
         <div class="metric-card">
           <div class="metric-icon">🎯</div>
@@ -135,7 +136,7 @@
       <div class="dashboard-section">
         <div class="section-header">
           <h2>Syllabus Mastery Breakdown (9 Elements)</h2>
-          <span class="section-sub">Passing threshold is 60% according to CIRO exam standards</span>
+          <span class="section-sub">Practice target: 60%; this is not an official passing-score claim</span>
         </div>
         <div class="element-cards-grid" id="elementCardsGrid">
           <!-- Populated dynamically via JS -->
@@ -148,9 +149,9 @@
       <!-- Exam Pre-Start Setup Screen -->
       <div id="mockExamSetup" class="exam-screen">
         <div class="exam-setup-card">
-          <div class="exam-badge">Official CIRE Proctored Simulation</div>
+          <div class="exam-badge">Timed CIRE Practice</div>
           <h2>Full-Length Practice Exam</h2>
-          <p>This simulation strictly matches the official January 2025 CIRE Exam specifications:</p>
+          <p>Practice with the syllabus question count, duration and indicative element weights:</p>
           <div class="exam-specs-list">
             <div class="spec-item">
               <span class="spec-icon">⏱️</span>
@@ -169,7 +170,7 @@
             <div class="spec-item">
               <span class="spec-icon">🎯</span>
               <div>
-                <strong>Passing Mark: 60% (66 / 110)</strong>
+                <strong>Practice Target: 60% (66 / 110)</strong>
                 <p>Pass/Fail grade with full element-by-element diagnostic review.</p>
               </div>
             </div>
@@ -206,7 +207,7 @@
       <div id="mockExamActive" class="exam-screen" style="display: none;">
         <div class="exam-sticky-bar">
           <div class="sticky-left">
-            <span class="exam-active-title">CIRE Official Simulation</span>
+            <span class="exam-active-title">CIRE Practice Simulation</span>
             <span class="q-counter" id="examProgressIndicator">Question 1 of 110</span>
           </div>
           <div class="sticky-center">
@@ -280,7 +281,7 @@
           <div class="results-banner" id="resultsBanner">
             <div class="results-badge" id="resultsGradeBadge">PASS</div>
             <h1 id="resultsTitle">Exam Result: Pass (82%)</h1>
-            <p id="resultsSubtitle">Congratulations! You met the 60% passing requirement.</p>
+            <p id="resultsSubtitle">You met the 60% practice target.</p>
           </div>
 
           <div class="results-summary-grid">
@@ -354,7 +355,7 @@
         <div class="practice-controls-card">
           <h2>Topic Practice &amp; Syllabus Drilling</h2>
           <p>Choose an element to focus on, configure test parameters, and practice with immediate explanations.</p>
-          
+
           <div class="practice-form-grid">
             <div class="form-group">
               <label for="practiceElementSelect">Select Syllabus Element:</label>
@@ -485,7 +486,7 @@
       <div class="bank-container">
         <div class="bank-filter-card">
           <div class="search-bar-row">
-            <input type="text" id="bankSearchInput" class="form-control search-input" placeholder="🔍 Search all 3,000 questions by keyword, rule (e.g. UMIR 4.1, CIPF, OBSI, margin, gross-up)...">
+            <input type="text" id="bankSearchInput" class="form-control search-input" placeholder="🔍 Search questions by keyword, rule (e.g. UMIR 4.1, CIPF, OBSI, margin, gross-up)...">
             <button class="btn btn-primary" onclick="window.CIRE_BANK.search()">Search</button>
             <button class="btn btn-secondary" onclick="window.CIRE_BANK.resetFilters()">Reset</button>
           </div>
@@ -494,7 +495,7 @@
             <div class="filter-col">
               <label for="bankElementFilter">Element:</label>
               <select id="bankElementFilter" class="form-control form-control-sm">
-                <option value="all">All Elements (3,000 Qs)</option>
+                <option value="all">All Elements</option>
               </select>
             </div>
             <div class="filter-col">
@@ -521,7 +522,7 @@
         </div>
 
         <div class="bank-results-header">
-          <span id="bankResultsCount">Showing 3,000 of 3,000 questions</span>
+          <span id="bankResultsCount">Loading questions</span>
           <div class="pagination-controls" id="bankPaginationTop">
             <!-- Rendered by JS -->
           </div>
@@ -547,7 +548,7 @@
           <div class="card-badge-highlight">Free Hosting</div>
           <h2>Deploy to GitHub Pages in 2 Minutes</h2>
           <p>This entire exam prep platform is 100% static, client-side, and requires no backend server or build pipeline. You can upload it to GitHub and have your personal exam prep site live immediately.</p>
-          
+
           <div class="deployment-steps">
             <div class="step-box">
               <div class="step-num">1</div>
@@ -563,7 +564,7 @@
                 <p>Upload all files in this project folder (including <code>index.html</code>, <code>css/</code>, <code>js/</code>, <code>data/</code>) to the repository branch (e.g. <code>main</code>).</p>
                 <pre><code>git init
 git add .
-git commit -m "Deploy CIRE 3,000 questions exam prep"
+git commit -m "Deploy CIRE unique questions exam prep"
 git branch -M main
 git remote add origin https://github.com/&lt;your-username&gt;/ciro-cire-exam-prep.git
 git push -u origin main</code></pre>
@@ -584,7 +585,7 @@ git push -u origin main</code></pre>
         <div class="settings-card">
           <h2>Your Study Data Management</h2>
           <p>All your practice scores, mock exam history, and flagged questions are securely stored in your browser's <code>localStorage</code>. You can export a JSON backup to restore on another device, or reset your progress.</p>
-          
+
           <div class="settings-actions-grid">
             <div class="action-card">
               <h3>Export Study Data</h3>
@@ -646,7 +647,7 @@ git push -u origin main</code></pre>
     </div>
   </div>
 
-  <!-- Data Scripts: Manifest + All 9 Elements (3,000 Questions) -->
+  <!-- Data Scripts: Manifest + All 9 Elements (unique Questions) -->
   <script src="data/questions_manifest.js"></script>
   <script src="data/questions_e1.js"></script>
   <script src="data/questions_e2.js"></script>
@@ -657,6 +658,10 @@ git push -u origin main</code></pre>
   <script src="data/questions_e7.js"></script>
   <script src="data/questions_e8.js"></script>
   <script src="data/questions_e9.js"></script>
+
+  <script src="data/question_sources.js"></script>
+  <script src="data/question_aliases.js"></script>
+  <script src="js/questionBank.js"></script>
 
   <!-- Application Logic Scripts -->
   <script src="js/storage.js"></script>

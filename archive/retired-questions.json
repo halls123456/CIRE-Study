@@ -1,0 +1,743 @@
+{
+  "note": "Excluded from the live bank. These originals need correction or specialist review before reuse.",
+  "questions": [
+    {
+      "id": "CIRE-E1-004",
+      "element": 1,
+      "elementTitle": "Overview of Canadian Securities Regulatory Framework",
+      "subOutcome": "1.2",
+      "subOutcomeTitle": "CIRO Hearing Fines",
+      "cognitiveLevel": "Analyze",
+      "question": "Under CIRO enforcement rules, what maximum fine can a Hearing Panel levy against an individual Approved Person per contravention?",
+      "options": [
+        "$25,000,000 per contravention",
+        "$500,000 per contravention",
+        "$100,000 per contravention",
+        "$5,000,000 per contravention"
+      ],
+      "correct": 3,
+      "explanation": "Under CIRO IDPC Rule 8200, a Hearing Panel can impose administrative penalties up to $5,000,000 per contravention against an individual Approved Person.",
+      "retirementReason": "Fine stated as an absolute cap without profit/loss-linked alternative."
+    },
+    {
+      "id": "CIRE-E1-007",
+      "element": 1,
+      "elementTitle": "Overview of Canadian Securities Regulatory Framework",
+      "subOutcome": "1.4",
+      "subOutcomeTitle": "Marketplaces: ATS",
+      "cognitiveLevel": "Apply",
+      "question": "What distinguishes an Alternative Trading System (ATS) from a recognized stock exchange in Canada?",
+      "options": [
+        "An ATS is completely exempt from UMIR and CIRO market surveillance",
+        "An ATS can only execute fixed-income trades and is prohibited from trading equities",
+        "An ATS does not list securities or impose corporate listing requirements; it only matches trades in securities listed elsewhere",
+        "An ATS is owned and operated by the federal government through OSFI"
+      ],
+      "correct": 2,
+      "explanation": "An ATS provides trading matching facilities for securities listed on recognized exchanges, but does not list securities itself.",
+      "retirementReason": "ATS description incorrectly confines trading to securities listed elsewhere."
+    },
+    {
+      "id": "CIRE-E1-009",
+      "element": 1,
+      "elementTitle": "Overview of Canadian Securities Regulatory Framework",
+      "subOutcome": "1.6",
+      "subOutcomeTitle": "CIPF Coverage Limits",
+      "cognitiveLevel": "Remember",
+      "question": "A client holds $700,000 in a cash account, $450,000 in a margin account, and $900,000 in an RRSP at an insolvent CIRO dealer. What total CIPF coverage is available?",
+      "options": [
+        "$1,000,000 strictly capped across all accounts combined",
+        "$0 because margin accounts void CIPF insolvency protection",
+        "$2,050,000 because all accounts are fully covered up to $1,000,000 each",
+        "$1,900,000 ($1,000,000 combined limit for general accounts plus $900,000 for the separate RRSP)"
+      ],
+      "correct": 3,
+      "explanation": "Cash and margin accounts are general accounts combined up to $1,000,000. Registered accounts (RRSP) are separate accounts covered up to an additional $1,000,000. Total = $1,000,000 + $900,000 = $1,900,000.",
+      "retirementReason": "CIPF account balances alone do not establish a missing-property payment."
+    },
+    {
+      "id": "CIRE-E1-012",
+      "element": 1,
+      "elementTitle": "Overview of Canadian Securities Regulatory Framework",
+      "subOutcome": "1.9",
+      "subOutcomeTitle": "Criminal Code Insider Trading",
+      "cognitiveLevel": "Analyze",
+      "question": "Under section 382.1 of the Criminal Code of Canada, which conduct constitutes criminal insider trading?",
+      "options": [
+        "Failing to renew a representative license on the NRD by the annual deadline",
+        "Charging a commission rate higher than the posted discount schedule",
+        "Knowingly buying or selling securities using material non-public information or tipping such information to others",
+        "Executing a trade for a client who has not completed an annual KYC update"
+      ],
+      "correct": 2,
+      "explanation": "Criminal Code section 382.1 makes it an indictable offense to trade or tip material non-public information.",
+      "retirementReason": "Conflates statutory elements of trading and tipping offences."
+    },
+    {
+      "id": "CIRE-E1-014",
+      "element": 1,
+      "elementTitle": "Overview of Canadian Securities Regulatory Framework",
+      "subOutcome": "1.10",
+      "subOutcomeTitle": "Beneficial Ownership",
+      "cognitiveLevel": "Understand",
+      "question": "Under Canadian AML regulations, what is the beneficial ownership identification threshold for corporate entities?",
+      "options": [
+        "10% or more of voting rights",
+        "5% or more of voting rights",
+        "50% or more of voting rights",
+        "25% or more of voting rights or ownership interest"
+      ],
+      "correct": 3,
+      "explanation": "Under the PCMLTFA, reporting entities must identify and verify the identity of all individuals owning or controlling 25% or more of an entity.",
+      "retirementReason": "Explanation conflates beneficial-owner information confirmation with identity verification."
+    },
+    {
+      "id": "CIRE-E1-015",
+      "element": 1,
+      "elementTitle": "Overview of Canadian Securities Regulatory Framework",
+      "subOutcome": "1.11",
+      "subOutcomeTitle": "PIPEDA Consent",
+      "cognitiveLevel": "Apply",
+      "question": "What core privacy principle is established under PIPEDA regarding client data?",
+      "options": [
+        "Personal client information cannot be retained on computer servers located outside of provincial boundaries",
+        "A financial institution can freely sell customer contact databases to third parties without notice",
+        "Client financial records must be published on a public provincial registry for transparency",
+        "An organization must obtain informed client consent before collecting, using, or disclosing personal information"
+      ],
+      "correct": 3,
+      "explanation": "PIPEDA establishes that commercial organizations must obtain meaningful, informed consent from individuals before collecting, using, or disclosing their personal information.",
+      "retirementReason": "Consent presented without statutory exceptions."
+    },
+    {
+      "id": "CIRE-E2-004",
+      "element": 2,
+      "elementTitle": "Prospective Client Relationships",
+      "subOutcome": "2.3",
+      "subOutcomeTitle": "Retail Protections",
+      "cognitiveLevel": "Analyze",
+      "question": "What key regulatory protection applies to retail clients that may be waived by institutional clients?",
+      "options": [
+        "Detailed account-level suitability assessments for recommended investment transactions",
+        "Protection against criminal fraud under the Criminal Code of Canada",
+        "Trade confirmation delivery requirements under securities law",
+        "Obligation to comply with Universal Market Integrity Rules (UMIR)"
+      ],
+      "correct": 0,
+      "explanation": "Institutional clients who have the sophistication and capacity to evaluate risk can waive suitability determination for recommendations, whereas retail clients cannot.",
+      "retirementReason": "Institutional suitability waivers described too broadly."
+    },
+    {
+      "id": "CIRE-E2-007",
+      "element": 2,
+      "elementTitle": "Prospective Client Relationships",
+      "subOutcome": "2.5",
+      "subOutcomeTitle": "KYC Milestones",
+      "cognitiveLevel": "Apply",
+      "question": "Under Client Focused Reforms (CFR), when must an Approved Person complete Know-Your-Client (KYC) collection?",
+      "options": [
+        "Before opening an account, making a recommendation, accepting a trade, or when there is a material change in client circumstances",
+        "Only once at account opening, with no subsequent updates required",
+        "Only when the client requests an increase in margin borrowing limits",
+        "Strictly at the end of every calendar quarter during tax preparation"
+      ],
+      "correct": 0,
+      "explanation": "CFR mandates KYC collection prior to account opening and trade execution, with updates required upon any material change in client circumstances.",
+      "retirementReason": "KYC timing and exemptions oversimplified."
+    },
+    {
+      "id": "CIRE-E2-010",
+      "element": 2,
+      "elementTitle": "Prospective Client Relationships",
+      "subOutcome": "2.7",
+      "subOutcomeTitle": "Power of Attorney",
+      "cognitiveLevel": "Understand",
+      "question": "What happens to a general Power of Attorney (POA) if the grantor becomes mentally incapacitated?",
+      "options": [
+        "The general POA ceases to be valid unless it is an Enduring (or Continuing) Power of Attorney",
+        "The general POA automatically converts into a joint tenancy account",
+        "The dealer must immediately transfer all assets to the provincial Public Guardian",
+        "The general POA remains permanently valid under all Canadian provincial laws"
+      ],
+      "correct": 0,
+      "explanation": "A standard general POA terminates upon the grantor's mental incapacity. Only an Enduring or Continuing Power of Attorney survives mental incapacity.",
+      "retirementReason": "Power-of-attorney validity depends on governing jurisdiction and instrument."
+    },
+    {
+      "id": "CIRE-E2-013",
+      "element": 2,
+      "elementTitle": "Prospective Client Relationships",
+      "subOutcome": "2.10",
+      "subOutcomeTitle": "Firm Welcome Package",
+      "cognitiveLevel": "Remember",
+      "question": "Which of the following documents must be provided to a retail client in the Firm Welcome Package at account opening?",
+      "options": [
+        "The dealer's annual internal compliance audit report and CCO executive evaluation",
+        "The CIRO Account Opening Brochure ('Making a Complaint: A Guide for Investors') and the CIPF official brochure",
+        "A complete list of all other clients currently serviced by the representative",
+        "The provincial securities commission's annual regulatory budget"
+      ],
+      "correct": 1,
+      "explanation": "At account opening, dealers must provide the CIRO complaint guide brochure, CIPF official coverage brochure, fee schedule, and conflict of interest disclosures.",
+      "retirementReason": "Conflates account-opening and complaint brochures."
+    },
+    {
+      "id": "CIRE-E2-014",
+      "element": 2,
+      "elementTitle": "Prospective Client Relationships",
+      "subOutcome": "2.11",
+      "subOutcomeTitle": "Record Retention Period",
+      "cognitiveLevel": "Understand",
+      "question": "Under CIRO rules, what is the minimum required retention period for client account files, KYC forms, and trading records?",
+      "options": [
+        "At least 7 years from the date the record was created or the account was closed",
+        "At least 2 years from the date of the last transaction",
+        "Indefinitely in physical paper archives",
+        "At least 20 years under the Canada Business Corporations Act"
+      ],
+      "correct": 0,
+      "explanation": "CIRO rules mandate that dealers retain client records, KYC documentation, agreements, and transaction records for at least 7 years.",
+      "retirementReason": "Retention start date stated ambiguously."
+    },
+    {
+      "id": "CIRE-E3-003",
+      "element": 3,
+      "elementTitle": "Scope of Client Relationships",
+      "subOutcome": "3.3",
+      "subOutcomeTitle": "Fiduciary Duty",
+      "cognitiveLevel": "Apply",
+      "question": "When does an Investment Dealer or Portfolio Manager owe a full fiduciary duty to a retail client?",
+      "options": [
+        "Only when the client opens an Order Execution Only (OEO) account",
+        "In every standard broker-client execution relationship automatically",
+        "When the firm manages the client's account on a fully discretionary basis or where the client has surrendered complete trust and decision-making authority",
+        "Only when trading federal government treasury bills"
+      ],
+      "correct": 2,
+      "explanation": "In Canadian law, a full fiduciary relationship arises where there is discretion, vulnerability, and reliance, such as in fully managed discretionary accounts.",
+      "retirementReason": "Fiduciary-duty test presented too categorically."
+    },
+    {
+      "id": "CIRE-E3-006",
+      "element": 3,
+      "elementTitle": "Scope of Client Relationships",
+      "subOutcome": "3.5",
+      "subOutcomeTitle": "Managed Accounts IPS",
+      "cognitiveLevel": "Understand",
+      "question": "What document is legally required before an Investment Dealer can manage a retail client's portfolio on a discretionary basis?",
+      "options": [
+        "A written Managed Account Agreement and a formal Investment Policy Statement (IPS)",
+        "An informal handwritten letter of intent signed by the client's accountant",
+        "A temporary margin agreement valid for up to 30 days",
+        "A verbal authorization recorded on a monitored telephone line"
+      ],
+      "correct": 0,
+      "explanation": "Discretionary managed accounts require a formal Managed Account Agreement and an approved Investment Policy Statement (IPS) establishing asset allocation and constraints.",
+      "retirementReason": "Conflates temporary discretionary and managed account requirements."
+    },
+    {
+      "id": "CIRE-E3-009",
+      "element": 3,
+      "elementTitle": "Scope of Client Relationships",
+      "subOutcome": "3.8",
+      "subOutcomeTitle": "Product Due Diligence",
+      "cognitiveLevel": "Remember",
+      "question": "Under Client Focused Reforms, what is the difference between Product Due Diligence (PDD) and Know-Your-Product (KYP)?",
+      "options": [
+        "PDD is optional guidance, whereas KYP is a statutory criminal rule",
+        "PDD is performed by CIRO, while KYP is performed by the provincial securities commission",
+        "PDD is the firm-level duty to assess and approve products before offering them; KYP is the individual representative's duty to understand approved products before recommending them",
+        "PDD applies only to equities, while KYP applies only to mutual funds"
+      ],
+      "correct": 2,
+      "explanation": "PDD is the dealer's obligation to evaluate and approve products for its platform; KYP is the Approved Person's obligation to understand the product's structure, risks, and costs before recommendation.",
+      "retirementReason": "KYP described as exclusively individual when dealer obligations also apply."
+    },
+    {
+      "id": "CIRE-E3-013",
+      "element": 3,
+      "elementTitle": "Scope of Client Relationships",
+      "subOutcome": "3.12",
+      "subOutcomeTitle": "Institutional Suitability Waiver",
+      "cognitiveLevel": "Remember",
+      "question": "Under what condition can an institutional client be exempt from suitability determination by an Investment Dealer?",
+      "options": [
+        "Whenever the client opens an account with more than $100,000 in cash",
+        "Whenever the client trades on foreign organized regulated markets",
+        "If the dealer assesses that the client has the sophistication and capacity to evaluate risk independently and the client provides a written waiver",
+        "Whenever the client is incorporated under provincial business corporation statutes"
+      ],
+      "correct": 2,
+      "explanation": "Institutional clients can be granted suitability exemptions if the firm assesses their sophistication and independence, supported by appropriate waivers.",
+      "retirementReason": "Institutional waiver omits non-individual/permitted-client conditions."
+    },
+    {
+      "id": "CIRE-E3-014",
+      "element": 3,
+      "elementTitle": "Scope of Client Relationships",
+      "subOutcome": "3.13",
+      "subOutcomeTitle": "Unsolicited Unsuitable Order",
+      "cognitiveLevel": "Understand",
+      "question": "A retail advisory client insists on placing an unsolicited order for a speculative stock that the representative deems completely unsuitable. What must the representative do?",
+      "options": [
+        "Refuse the trade under all circumstances and immediately close the account",
+        "Report the client to CIRO Market Surveillance as a suspicious trader",
+        "Execute the trade without any warning to avoid violating client autonomy",
+        "Warn the client that the trade is unsuitable, explain the risks, record the warning in client notes, and only execute if the client insists on proceeding"
+      ],
+      "correct": 3,
+      "explanation": "If an unsolicited trade is unsuitable, the representative must advise the client against it, explain why, document the warning, and only proceed if the client explicitly confirms the order.",
+      "retirementReason": "Unsuitable client-directed instruction omits the suitable-alternative requirement."
+    },
+    {
+      "id": "CIRE-E3-018",
+      "element": 3,
+      "elementTitle": "Scope of Client Relationships",
+      "subOutcome": "3.17",
+      "subOutcomeTitle": "Snowbird Servicing",
+      "cognitiveLevel": "Understand",
+      "question": "Under SEC Rule 15a-6 and Canadian provincial cross-border exemptions, what is a Canadian dealer permitted to do regarding a Canadian client vacationing temporarily in Florida?",
+      "options": [
+        "Actively solicit new US residents for local US brokerage accounts",
+        "Service the client's existing Canadian accounts and enter orders without full US broker-dealer registration, subject to state and federal exemption limits",
+        "Underwrite US municipal bond issues through the Montreal Exchange",
+        "Open unlimited margin accounts for US citizens without reporting to the IRS"
+      ],
+      "correct": 1,
+      "explanation": "Canadian dealers can service existing Canadian clients temporarily located in the US under foreign broker-dealer exemptions, but cannot solicit new US domestic clients.",
+      "retirementReason": "Cross-border exemption stated without establishing federal/state conditions."
+    },
+    {
+      "id": "CIRE-E4-003",
+      "element": 4,
+      "elementTitle": "Client Complaint Handling and Reporting",
+      "subOutcome": "4.2",
+      "subOutcomeTitle": "CIRO Arbitration Limit",
+      "cognitiveLevel": "Apply",
+      "question": "What is the maximum monetary award that an independent arbitrator can grant to an eligible investor under CIRO's Arbitration Program?",
+      "options": [
+        "Up to $2,000,000 in total",
+        "Up to $100,000 in total",
+        "Arbitration cannot award cash damages, only reprimands",
+        "Up to $500,000 (plus interest and legal costs up to $100,000)"
+      ],
+      "correct": 3,
+      "explanation": "The CIRO Arbitration Program can issue final, legally binding decisions awarding damages up to $500,000, plus up to $100,000 for legal fees and interest.",
+      "retirementReason": "Unsupported $100,000 legal-cost add-on."
+    },
+    {
+      "id": "CIRE-E4-005",
+      "element": 4,
+      "elementTitle": "Client Complaint Handling and Reporting",
+      "subOutcome": "4.4",
+      "subOutcomeTitle": "ComSet 5-Day Rule",
+      "cognitiveLevel": "Remember",
+      "question": "Under CIRO rules, within what timeframe must an Investment Dealer report certain client complaints, civil claims, or internal disciplinary actions through ComSet?",
+      "options": [
+        "Within 30 calendar days of quarter end",
+        "Only during the biennial CIRO on-site audit",
+        "Within 90 business days of final settlement",
+        "Within 5 business days of becoming aware of the event"
+      ],
+      "correct": 3,
+      "explanation": "Dealers must report reportable events—including formal customer complaints alleging theft or unauthorized trading, civil litigation, and criminal charges—within 5 business days on ComSet.",
+      "retirementReason": "Reporting deadlines vary by reportable event; blanket five-day claim unsafe."
+    },
+    {
+      "id": "CIRE-E4-006",
+      "element": 4,
+      "elementTitle": "Client Complaint Handling and Reporting",
+      "subOutcome": "4.5",
+      "subOutcomeTitle": "Complaint Response Timelines",
+      "cognitiveLevel": "Understand",
+      "question": "When an Investment Dealer receives a formal written complaint from a retail client, what are the mandatory regulatory response milestones?",
+      "options": [
+        "Send an initial written acknowledgment within 5 business days, and a comprehensive substantive response letter within 90 calendar days",
+        "Ignore the complaint until the client files a formal lawsuit in provincial court",
+        "Send an acknowledgment within 30 days and a final decision within one year",
+        "Send a response within 24 hours and a settlement check within 10 days"
+      ],
+      "correct": 0,
+      "explanation": "CIRO rules require written acknowledgment within 5 business days and a full written substantive response within 90 calendar days.",
+      "retirementReason": "Complaint timing presented universally without applicable jurisdiction and rules."
+    },
+    {
+      "id": "CIRE-E4-007",
+      "element": 4,
+      "elementTitle": "Client Complaint Handling and Reporting",
+      "subOutcome": "4.6",
+      "subOutcomeTitle": "Complaint Record Retention",
+      "cognitiveLevel": "Apply",
+      "question": "For how long must an Investment Dealer retain complete records of client complaints, investigation files, and settlement documents?",
+      "options": [
+        "At least 7 years from the date of the resolution or complaint receipt",
+        "Complaint files must be shredded after 6 months to protect privacy",
+        "At least 1 year following the annual general meeting",
+        "At least 3 years in physical paper form"
+      ],
+      "correct": 0,
+      "explanation": "CIRO rules mandate that dealers preserve all complaint records, correspondence, and resolution documentation for a minimum of 7 years.",
+      "retirementReason": "Retention start date stated ambiguously."
+    },
+    {
+      "id": "CIRE-E5-003",
+      "element": 5,
+      "elementTitle": "Market and Company Analysis",
+      "subOutcome": "5.2",
+      "subOutcomeTitle": "Bank of Canada Operating Band",
+      "cognitiveLevel": "Apply",
+      "question": "What is the operating target band of the Bank of Canada in implementing monetary policy?",
+      "options": [
+        "A variable band based on the daily price of Western Canadian Select crude oil",
+        "A fixed 0% to 1% band for corporate bond repo rates",
+        "A 50-basis-point band centered on the target for the overnight rate",
+        "A 200-basis-point band tied to the US Federal Reserve federal funds rate"
+      ],
+      "correct": 2,
+      "explanation": "The Bank of Canada sets an operating band of 50 basis points (0.50%), with the overnight rate target sitting at the midpoint of the band.",
+      "retirementReason": "Outdated Bank of Canada operating-band description; changed January 30, 2025."
+    },
+    {
+      "id": "CIRE-E6-001",
+      "element": 6,
+      "elementTitle": "Market Integrity, Trade Execution and Settlement",
+      "subOutcome": "6.1",
+      "subOutcomeTitle": "Best Execution Obligation",
+      "cognitiveLevel": "Remember",
+      "question": "Under UMIR Rule 5.1 and National Instrument 23-101, what constitutes 'Best Execution'?",
+      "options": [
+        "Executing the order only at the official market opening auction",
+        "Executing the trade that yields the highest commission payment to the executing broker",
+        "Taking all reasonable steps to obtain the most advantageous execution terms for a client order, considering price, speed, certainty, and total cost",
+        "Always routing every trade exclusively to the Toronto Stock Exchange regardless of price on other ATS venues"
+      ],
+      "correct": 2,
+      "explanation": "Best execution requires dealers to seek the most advantageous execution terms across all protected marketplaces, considering price, speed, and cost.",
+      "retirementReason": "Best-execution rule citation is obsolete and explanation narrows venue scope."
+    },
+    {
+      "id": "CIRE-E6-003",
+      "element": 6,
+      "elementTitle": "Market Integrity, Trade Execution and Settlement",
+      "subOutcome": "6.2",
+      "subOutcomeTitle": "Gatekeeping Responsibility",
+      "cognitiveLevel": "Apply",
+      "question": "What is the fundamental gatekeeping duty of a Participant dealer under UMIR?",
+      "options": [
+        "To maintain market liquidity by acting as market maker for every Canadian issuer",
+        "To guarantee that every retail client makes a profit on equity transactions",
+        "To monitor, detect, prevent, and immediately report abusive, manipulative, or deceptive trading activity to CIRO Market Surveillance",
+        "To audit the corporate tax filings of all institutional clients"
+      ],
+      "correct": 2,
+      "explanation": "Participants act as frontline gatekeepers, obligated to maintain policies, surveillance, and controls to prevent and report manipulative trading to CIRO.",
+      "retirementReason": "Blanket immediate reporting claim does not distinguish investigation/reporting thresholds."
+    },
+    {
+      "id": "CIRE-E6-011",
+      "element": 6,
+      "elementTitle": "Market Integrity, Trade Execution and Settlement",
+      "subOutcome": "6.8",
+      "subOutcomeTitle": "Trade Confirmations Next Day",
+      "cognitiveLevel": "Apply",
+      "question": "Under CIRO rules, when must an Investment Dealer send a written trade confirmation to a client following an executed transaction?",
+      "options": [
+        "Within 30 calendar days at month end",
+        "Within 90 calendar days accompanied by the annual performance report",
+        "Promptly, no later than the business day following trade execution",
+        "Only upon explicit written request from the client"
+      ],
+      "correct": 2,
+      "explanation": "Dealers must send trade confirmations containing transaction details, price, commission, and capacity (agent vs. principal) no later than the next business day.",
+      "retirementReason": "Unsupported universal next-business-day confirmation deadline."
+    },
+    {
+      "id": "CIRE-E6-015",
+      "element": 6,
+      "elementTitle": "Market Integrity, Trade Execution and Settlement",
+      "subOutcome": "6.11",
+      "subOutcomeTitle": "Derivatives Agreement Mandatory",
+      "cognitiveLevel": "Apply",
+      "question": "Which document must be signed and delivered before an Investment Dealer can execute the first options trade in a client account?",
+      "options": [
+        "A certified copy of the client's last three years of corporate tax returns",
+        "A power of attorney registered with the provincial supreme court",
+        "A Letter of Credit from a Schedule I Canadian Chartered Bank",
+        "An approved Options Trading Agreement and the official Risk Disclosure Statement for Exchange-Traded Options"
+      ],
+      "correct": 3,
+      "explanation": "Before derivative trading commences, the client must complete an options trading application/agreement and receive the official Risk Disclosure Statement.",
+      "retirementReason": "Outdated derivatives document terminology and incomplete approval conditions."
+    },
+    {
+      "id": "CIRE-E7-001",
+      "element": 7,
+      "elementTitle": "Securities, Managed Products and Mutual Funds",
+      "subOutcome": "7.1",
+      "subOutcomeTitle": "Cash Equivalents",
+      "cognitiveLevel": "Remember",
+      "question": "Which of the following financial instruments is classified as a 'cash equivalent'?",
+      "options": [
+        "A high-yield dividend-paying preferred share",
+        "A closed-end emerging market equity trust",
+        "A 10-year BBB-rated corporate debenture",
+        "A 90-day Government of Canada Treasury Bill"
+      ],
+      "correct": 3,
+      "explanation": "Cash equivalents are short-term, highly liquid debt instruments with maturities under one year, such as T-bills, bankers' acceptances, and commercial paper.",
+      "retirementReason": "Cash-equivalent explanation uses an overbroad under-one-year definition."
+    },
+    {
+      "id": "CIRE-E7-010",
+      "element": 7,
+      "elementTitle": "Securities, Managed Products and Mutual Funds",
+      "subOutcome": "7.8",
+      "subOutcomeTitle": "Mutual Fund Corporation",
+      "cognitiveLevel": "Understand",
+      "question": "What was historically the primary tax advantage of a Mutual Fund Corporation structure featuring multiple share classes?",
+      "options": [
+        "Mutual fund corporations are exempt from paying Canadian corporate income tax",
+        "Investors were exempt from paying management expense ratios",
+        "Dividends paid by mutual fund corporations were classified as tax-free gifts",
+        "Investors could switch between different fund classes without triggering an immediate taxable capital gain"
+      ],
+      "correct": 3,
+      "explanation": "Mutual fund corporations historically allowed investors to reallocate capital across different asset classes within the same corporate umbrella without triggering immediate capital gains.",
+      "retirementReason": "Historical corporate-class tax switch treatment is misleading for current preparation."
+    },
+    {
+      "id": "CIRE-E7-012",
+      "element": 7,
+      "elementTitle": "Securities, Managed Products and Mutual Funds",
+      "subOutcome": "7.10",
+      "subOutcomeTitle": "Fund Facts Pre-Sale Delivery",
+      "cognitiveLevel": "Analyze",
+      "question": "Under National Instrument 81-101, what is the mandatory requirement regarding the delivery of the Fund Facts document to retail mutual fund investors?",
+      "options": [
+        "The Fund Facts only needs to be delivered if the client explicitly requests it in writing",
+        "Delivery is required only for institutional clients with assets under $10 million",
+        "The Fund Facts must be delivered within 90 days after year-end financial reporting",
+        "The Fund Facts document must be delivered or sent to the client prior to accepting the order to purchase mutual fund units (pre-sale delivery)"
+      ],
+      "correct": 3,
+      "explanation": "Under pre-sale delivery rules, dealers must deliver the Fund Facts document to the client prior to executing the purchase order.",
+      "retirementReason": "Fund Facts timing wording inconsistent and exceptions omitted."
+    },
+    {
+      "id": "CIRE-E7-013",
+      "element": 7,
+      "elementTitle": "Securities, Managed Products and Mutual Funds",
+      "subOutcome": "7.10",
+      "subOutcomeTitle": "DSC Banned in Canada",
+      "cognitiveLevel": "Remember",
+      "question": "What major regulatory ban regarding mutual fund sales charges took effect in Canada in June 2022?",
+      "options": [
+        "A ban on all front-end initial commission discounts",
+        "A ban on no-load index mutual funds",
+        "A prohibition on mutual funds investing in Canadian bank stocks",
+        "A complete ban on Deferred Sales Charge (DSC) options, including low-load sales charge schedules"
+      ],
+      "correct": 3,
+      "explanation": "Canadian securities regulators implemented a total ban on the Deferred Sales Charge (DSC) option as of June 1, 2022, ending redemption fee lock-ins.",
+      "retirementReason": "DSC ban explanation implies all legacy redemption charges immediately ended."
+    },
+    {
+      "id": "CIRE-E7-014",
+      "element": 7,
+      "elementTitle": "Securities, Managed Products and Mutual Funds",
+      "subOutcome": "7.11",
+      "subOutcomeTitle": "ETF Arbitrage Mechanism",
+      "cognitiveLevel": "Understand",
+      "question": "How do ETFs maintain their market trading price close to their underlying Net Asset Value (NAV)?",
+      "options": [
+        "By direct price intervention from the Bank of Canada and the Toronto Stock Exchange",
+        "Through mandatory quarterly cash equalization payments to retail unitholders",
+        "Through the creation and redemption mechanism executed by Designated Brokers and Authorized Participants in the primary market",
+        "By freezing trading whenever market prices deviate by more than $0.05 from NAV"
+      ],
+      "correct": 2,
+      "explanation": "Arbitrage by Authorized Participants (creating/redeeming large baskets of underlying securities) ensures ETF market prices stay aligned with Net Asset Value.",
+      "retirementReason": "Creation/redemption described as guaranteeing NAV alignment."
+    },
+    {
+      "id": "CIRE-E7-015",
+      "element": 7,
+      "elementTitle": "Securities, Managed Products and Mutual Funds",
+      "subOutcome": "7.11",
+      "subOutcomeTitle": "Leveraged ETF Compounding",
+      "cognitiveLevel": "Apply",
+      "question": "Why are leveraged and inverse ETFs generally NOT suitable for long-term buy-and-hold retail investors?",
+      "options": [
+        "Because they are backed entirely by uninsured foreign currency forwards",
+        "Because their daily rebalancing creates volatility compounding ('decay'), causing long-term returns to diverge significantly from the underlying benchmark multiple",
+        "Because they are legally required to liquidate all assets at the end of each calendar month",
+        "Because their management expense ratios are capped by law at 0.01%"
+      ],
+      "correct": 1,
+      "explanation": "Daily resetting causes compounding tracking error (volatility drag) over holding periods longer than a single trading session, making them unsuitable for buy-and-hold.",
+      "retirementReason": "Daily-reset effects described as universally unsuitable and always decaying."
+    },
+    {
+      "id": "CIRE-E8-002",
+      "element": 8,
+      "elementTitle": "Derivatives",
+      "subOutcome": "8.1",
+      "subOutcomeTitle": "Call Option Right",
+      "cognitiveLevel": "Understand",
+      "question": "An investor purchases one XYZ Oct 50 Call option at a premium of $3.50. What right does this contract grant to the buyer?",
+      "options": [
+        "The obligation to sell 100 shares of XYZ at $50.00 per share immediately",
+        "The right to receive quarterly dividends directly from XYZ Corp",
+        "The right to sell 100 shares of XYZ at $53.50 per share",
+        "The right (but not the obligation) to purchase 100 shares of XYZ at $50.00 per share on or before the October expiration date"
+      ],
+      "correct": 3,
+      "explanation": "A call option grants the holder the right to buy the underlying shares at the specified strike price ($50) prior to expiration.",
+      "retirementReason": "Contract multiplier and exercise style are unstated assumptions."
+    },
+    {
+      "id": "CIRE-E8-003",
+      "element": 8,
+      "elementTitle": "Derivatives",
+      "subOutcome": "8.2",
+      "subOutcomeTitle": "Futures vs Forwards Cleared",
+      "cognitiveLevel": "Apply",
+      "question": "What is a primary distinction between an exchange-traded Futures contract and an Over-the-Counter (OTC) Forward contract?",
+      "options": [
+        "Futures have customized strike dates and contract sizes, whereas forwards are standardized",
+        "Futures are standardized contracts cleared through a central clearinghouse (CDCC) with daily mark-to-market; forwards are customized bilateral agreements with counterparty credit risk",
+        "Futures are illegal in Canada under provincial securities regulations",
+        "Forwards require daily variation margin payments, whereas futures settle only at maturity"
+      ],
+      "correct": 1,
+      "explanation": "Futures trade on organized exchanges with standardized terms and daily mark-to-market margin, eliminating counterparty risk. Forwards are non-standardized OTC contracts with counterparty risk.",
+      "retirementReason": "Central clearing incorrectly described as eliminating counterparty risk."
+    },
+    {
+      "id": "CIRE-E8-007",
+      "element": 8,
+      "elementTitle": "Derivatives",
+      "subOutcome": "8.5",
+      "subOutcomeTitle": "Montreal Exchange Derivatives",
+      "cognitiveLevel": "Apply",
+      "question": "On which exchange are Canadian exchange-traded stock options and bond futures officially listed and traded?",
+      "options": [
+        "Cboe Canada",
+        "Toronto Stock Exchange (TSX)",
+        "Bourse de Montréal (Montreal Exchange - MX)",
+        "Canadian Securities Exchange (CSE)"
+      ],
+      "correct": 2,
+      "explanation": "The Bourse de Montréal (MX) is Canada's dedicated financial derivatives exchange, where all exchange-traded options, index derivatives, and futures are listed.",
+      "retirementReason": "Explanation overstates the exchange as listing all Canadian derivatives."
+    },
+    {
+      "id": "CIRE-E8-011",
+      "element": 8,
+      "elementTitle": "Derivatives",
+      "subOutcome": "8.7",
+      "subOutcomeTitle": "Options Principal Approval",
+      "cognitiveLevel": "Apply",
+      "question": "Before an Approved Person can execute options trades for a client, who within the Investment Dealer must approve the Options Account Application?",
+      "options": [
+        "The head of the equity clearing department at CDS",
+        "The firm's chief technology officer",
+        "A designated Supervisory Principal / Branch Manager qualified as a Registered Options Principal (ROP)",
+        "A hearing officer from the provincial securities commission"
+      ],
+      "correct": 2,
+      "explanation": "Opening an options account requires prior review and written approval by a qualified supervisory principal / Registered Options Principal (ROP).",
+      "retirementReason": "Uses US Registered Options Principal terminology for Canadian approval."
+    },
+    {
+      "id": "CIRE-E8-012",
+      "element": 8,
+      "elementTitle": "Derivatives",
+      "subOutcome": "8.8",
+      "subOutcomeTitle": "Undermargined Options Ban",
+      "cognitiveLevel": "Analyze",
+      "question": "An Approved Person notices that a client's derivative account has fallen undermargined following an overnight market drop. The representative allows the client to enter new speculative derivative positions before meeting the margin deficit. What is the regulatory consequence?",
+      "options": [
+        "Permitted if the client promises to wire funds within 30 calendar days",
+        "Permitted if the representative covers the margin loan out of personal salary",
+        "Permitted provided the trades are executed on European-style index options",
+        "Strictly prohibited; dealers cannot execute new transactions that increase risk in an undermargined derivative account, and must demand immediate margin or liquidate positions"
+      ],
+      "correct": 3,
+      "explanation": "CIRO rules strictly prohibit trading in undermargined derivative accounts. No new positions that increase margin requirements may be opened until the call is satisfied.",
+      "retirementReason": "Margin restrictions described too absolutely, including liquidation timing."
+    },
+    {
+      "id": "CIRE-E9-005",
+      "element": 9,
+      "elementTitle": "Conflicts of Interest and Ethics",
+      "subOutcome": "9.7",
+      "subOutcomeTitle": "Prohibited Borrowing",
+      "cognitiveLevel": "Remember",
+      "question": "A wealthy client offers to lend $50,000 to their Registered Representative to help the representative buy a home. Is the representative permitted to accept this loan?",
+      "options": [
+        "Yes, if the loan is disclosed on the representative's annual income tax return",
+        "Yes, if the representative signs a notarized promissory note",
+        "No, Approved Persons are strictly prohibited from borrowing money from or lending money to clients, unless the client is an immediate family member or financial institution acting in ordinary course",
+        "Yes, provided the loan carries a fair market interest rate above prime"
+      ],
+      "correct": 2,
+      "explanation": "Personal financial dealings, such as borrowing from or lending to clients, are strictly prohibited under CIRO rules due to inherent and unresolvable conflicts of interest.",
+      "retirementReason": "Personal borrowing/lending exceptions and approvals oversimplified."
+    },
+    {
+      "id": "CIRE-E9-006",
+      "element": 9,
+      "elementTitle": "Conflicts of Interest and Ethics",
+      "subOutcome": "9.7",
+      "subOutcomeTitle": "Prohibited Executor/POA",
+      "cognitiveLevel": "Understand",
+      "question": "Can a Registered Representative agree to act as the Executor or Power of Attorney (POA) for a non-family client's estate?",
+      "options": [
+        "Yes, if the representative receives zero compensation for the duties",
+        "No, CIRO rules prohibit Approved Persons from acting as an executor, trustee, or power of attorney for a client unless the client is an immediate family member and firm approval is granted",
+        "Yes, if the estate value is under $100,000",
+        "Yes, provided the client names the dealer firm as a secondary beneficiary"
+      ],
+      "correct": 1,
+      "explanation": "Approved Persons cannot act as executor, trustee, or POA for a client unless the client is a qualifying immediate family member and prior written dealer approval is obtained.",
+      "retirementReason": "Executor/POA exceptions and terminology require qualification."
+    },
+    {
+      "id": "CIRE-E9-008",
+      "element": 9,
+      "elementTitle": "Conflicts of Interest and Ethics",
+      "subOutcome": "9.9",
+      "subOutcomeTitle": "Outside Business Activity Approval",
+      "cognitiveLevel": "Analyze",
+      "question": "An Approved Person wants to become a paid director of a private technology company. What regulatory step is required before accepting the position?",
+      "options": [
+        "The representative must resign from their securities registration before accepting",
+        "The representative only needs to notify their branch assistant verbally",
+        "The Approved Person must obtain prior written approval from their Investment Dealer and report the activity to CIRO and the CSA via Form 33-109F4",
+        "No step is required as long as the tech company does not trade on the TSX"
+      ],
+      "correct": 2,
+      "explanation": "Approved Persons must disclose and obtain dealer approval for all Outside Business Activities (OBAs) and report them to regulators via NRD Form 33-109F4.",
+      "retirementReason": "Outside activity reporting form and universal reporting claim oversimplified."
+    },
+    {
+      "id": "CIRE-E9-010",
+      "element": 9,
+      "elementTitle": "Conflicts of Interest and Ethics",
+      "subOutcome": "9.11",
+      "subOutcomeTitle": "Grey List vs Restricted List",
+      "cognitiveLevel": "Understand",
+      "question": "What is the difference between a 'Grey List' and a 'Restricted List' within an Investment Dealer?",
+      "options": [
+        "A Grey List applies to bonds, while a Restricted List applies to common equities",
+        "A Restricted List allows unlimited proprietary trading but stops retail trading",
+        "A Grey List is a highly confidential internal monitoring list of pending transactions; a Restricted List is a firm-wide list prohibiting trading, recommendations, and research in specified securities",
+        "A Grey List is published on the dealer's public website, while a Restricted List is internal only"
+      ],
+      "correct": 2,
+      "explanation": "The Grey List is a non-public watch list used by compliance to monitor deal-related flow. The Restricted List is widely circulated internally to freeze all recommendations and trading in deal securities.",
+      "retirementReason": "Restricted-list effects described as an absolute ban on all activity."
+    }
+  ]
+}

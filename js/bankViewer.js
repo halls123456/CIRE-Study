@@ -7,7 +7,7 @@
 
   const CIRE_BANK = {
     init() {
-      // Gather all 3,000 questions
+      // Gather all active questions
       allQuestions = [];
       for (let e = 1; e <= 9; e++) {
         const qList = window['CIRE_QUESTIONS_E' + e] || [];
@@ -23,7 +23,7 @@
       const elemSelect = document.getElementById('bankElementFilter');
       if (!elemSelect || !window.CIRE_MANIFEST) return;
 
-      elemSelect.innerHTML = '<option value="all">All 9 Elements (3,000 Questions)</option>' +
+      elemSelect.innerHTML = `<option value="all">All 9 Elements (${allQuestions.length.toLocaleString()} Questions)</option>` +
         window.CIRE_MANIFEST.elements.map(e => `
           <option value="${e.id}">Element ${e.id}: ${e.shortTitle} (${e.bankCount} Qs)</option>
         `).join('');
@@ -103,8 +103,8 @@
         const ansRecord = answers[q.id];
         let statusBadge = '';
         if (ansRecord) {
-          statusBadge = ansRecord.isCorrect 
-            ? `<span class="badge badge-success">Previously Correct</span>` 
+          statusBadge = ansRecord.isCorrect
+            ? `<span class="badge badge-success">Previously Correct</span>`
             : `<span class="badge badge-danger">Previously Incorrect</span>`;
         }
 
@@ -140,7 +140,7 @@
 
             <div class="bank-q-explanation" id="bexp_${q.id}" style="display: none;">
               <strong>Correct Answer: ${letters[q.correct]}</strong><br>
-              <strong>Explanation:</strong> ${q.explanation}
+              <strong>Explanation:</strong> ${window.CIRE_QUESTION_BANK.explanationHTML(q)}
             </div>
           </div>
         `;
