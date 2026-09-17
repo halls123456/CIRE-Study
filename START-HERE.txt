@@ -1,0 +1,17 @@
+CIRE Study update
+
+193 distinct questions: 83 retained originals and 110 new exercises.
+All 99 numbered syllabus outcomes have new practice coverage.
+2,876 repeated entries removed; 41 questionable originals archived with reasons.
+
+Open CIRE-Study/index.html to study locally.
+Open CIRE-Study/docs/BANK-REVIEW.html for coverage and sources.
+The ZIP contains the complete updated site, including the new data and script files.
+
+Publishing status: NOT published. GitHub rejected the saved credentials.
+To update GitHub Pages, sign in with repository write access and upload the contents of the CIRE-Study folder to the repository root on its Pages source branch. Deploy all changed files together.
+Alternatively apply CIRE-Study-update.patch to the original repository checkout, then commit and push through an authenticated GitHub connection.
+
+Verification: nine automated tests passed, bank validation reported zero errors and zero similarity warnings, and a headless browser check passed dashboard, topic practice, sources, full mock exams, review, search and mobile overflow checks.
+
+These are independent study exercises, not official exam questions. Outcome coverage is not a claim that every curriculum sub-point is exhausted or that the bank has had specialist validation.

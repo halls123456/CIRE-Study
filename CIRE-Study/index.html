@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIRE Master - Canadian Investment Regulatory Exam Prep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/exam.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="theme-dark">
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-badge">CIRO</div>
+        <div class="brand-text">
+          <span class="brand-title">CIRE Master</span>
+          <span class="brand-subtitle">Canadian Investment Regulatory Exam Prep (<span data-bank-total>0</span> questions)</span>
+        </div>
+      </div>
+
+      <nav class="nav-tabs">
+        <button class="nav-tab active" data-tab="dashboard">
+          <span class="tab-icon">📊</span>
+          <span class="tab-label">Dashboard</span>
+        </button>
+        <button class="nav-tab" data-tab="mock-exam">
+          <span class="tab-icon">⏱️</span>
+          <span class="tab-label">Mock Exam (110 Qs)</span>
+        </button>
+        <button class="nav-tab" data-tab="topic-practice">
+          <span class="tab-icon">🎯</span>
+          <span class="tab-label">Topic Drill</span>
+        </button>
+        <button class="nav-tab" data-tab="flashcards">
+          <span class="tab-icon">🧠</span>
+          <span class="tab-label">Flashcards</span>
+        </button>
+        <button class="nav-tab" data-tab="bank-explorer">
+          <span class="tab-icon">🔍</span>
+          <span class="tab-label">Question Bank</span>
+        </button>
+        <button class="nav-tab" data-tab="settings">
+          <span class="tab-icon">⚙️</span>
+          <span class="tab-label">Settings / Help</span>
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="action-btn" title="Toggle Light/Dark Theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+        <div class="user-stats-pill" title="Overall Bank Progress">
+          <span class="pill-dot"></span>
+          <span id="headerProgressText">0 / 0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="app-main">
+    <!-- 1. DASHBOARD VIEW -->
+    <section id="view-dashboard" class="tab-view active">
+      <div class="view-hero">
+        <div class="hero-content">
+          <div class="syllabus-tag">Official Syllabus: January 2025 • CIRO &amp; Fitch Learning</div>
+          <h1>Ready to conquer the CIRE exam?</h1>
+          <p>Master all 9 syllabus elements with distinct practice questions, timed 110-question practice exams, and instant analytical feedback.</p>
+          <p class="text-muted">Independent practice material. Covers all 99 numbered syllabus outcomes. The 60% score is a practice target. <a href="docs/BANK-REVIEW.html" target="_blank" rel="noopener">Question-bank review</a> · <a href="https://www.ciro.ca/registered-individuals/proficiency/exam-hub/canadian-investment-regulatory-exam-cire" target="_blank" rel="noopener">Official CIRE resources</a></p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="window.CIRE_APP.startNewMockExam()">
+              <span>🚀 Launch Full Mock Exam (110 Qs • 2 Hrs)</span>
+            </button>
+            <button class="btn btn-secondary" onclick="window.CIRE_APP.switchTab('topic-practice')">
+              <span>🎯 Practice by Element</span>
+            </button>
+          </div>
+        </div>
+        <div class="readiness-card">
+          <div class="readiness-gauge">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              <path id="readinessPath" class="circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              <text x="18" y="20.35" class="percentage" id="readinessScore">0%</text>
+            </svg>
+          </div>
+          <div class="readiness-label">
+            <strong>Exam Readiness Score</strong>
+            <span id="readinessStatus">Begin your study journey</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">📚</div>
+          <div class="metric-info">
+            <span class="metric-value" id="statAnswered">0</span>
+            <span class="metric-label">Questions Attempted</span>
+          </div>
+          <div class="metric-sub" id="statRemaining">Loading questions</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">🎯</div>
+          <div class="metric-info">
+            <span class="metric-value" id="statAccuracy">0%</span>
+            <span class="metric-label">Overall Accuracy</span>
+          </div>
+          <div class="metric-sub" id="statAccuracyDetail">0 correct answers</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">🏆</div>
+          <div class="metric-info">
+            <span class="metric-value" id="statMockExams">0</span>
+            <span class="metric-label">Mock Exams Completed</span>
+          </div>
+          <div class="metric-sub" id="statBestMock">Best score: None</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">⭐</div>
+          <div class="metric-info">
+            <span class="metric-value" id="statFlagged">0</span>
+            <span class="metric-label">Flagged for Review</span>
+          </div>
+          <div class="metric-sub"><a href="#" onclick="window.CIRE_APP.practiceFlagged(); return false;">Practice flagged questions →</a></div>
+        </div>
+      </div>
+
+      <!-- Syllabus Elements Breakdown -->
+      <div class="dashboard-section">
+        <div class="section-header">
+          <h2>Syllabus Mastery Breakdown (9 Elements)</h2>
+          <span class="section-sub">Practice target: 60%; this is not an official passing-score claim</span>
+        </div>
+        <div class="element-cards-grid" id="elementCardsGrid">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. MOCK EXAM VIEW -->
+    <section id="view-mock-exam" class="tab-view">
+      <!-- Exam Pre-Start Setup Screen -->
+      <div id="mockExamSetup" class="exam-screen">
+        <div class="exam-setup-card">
+          <div class="exam-badge">Timed CIRE Practice</div>
+          <h2>Full-Length Practice Exam</h2>
+          <p>Practice with the syllabus question count, duration and indicative element weights:</p>
+          <div class="exam-specs-list">
+            <div class="spec-item">
+              <span class="spec-icon">⏱️</span>
+              <div>
+                <strong>Duration: 2 Hours (120 Minutes)</strong>
+                <p>Real-time countdown timer with automated submission warnings.</p>
+              </div>
+            </div>
+            <div class="spec-item">
+              <span class="spec-icon">📝</span>
+              <div>
+                <strong>Format: 110 Multiple Choice Questions</strong>
+                <p>Randomly selected according to exact syllabus indicative element weights.</p>
+              </div>
+            </div>
+            <div class="spec-item">
+              <span class="spec-icon">🎯</span>
+              <div>
+                <strong>Practice Target: 60% (66 / 110)</strong>
+                <p>Pass/Fail grade with full element-by-element diagnostic review.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="weighting-table-container">
+            <h3>Exam Indicative Question Distribution</h3>
+            <table class="weighting-table">
+              <thead>
+                <tr>
+                  <th>Element</th>
+                  <th>Topic Area</th>
+                  <th>Indicative Qs</th>
+                </tr>
+              </thead>
+              <tbody id="examWeightingTableBody">
+                <!-- Populated via JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="setup-actions">
+            <button class="btn btn-primary btn-lg" onclick="window.CIRE_EXAM.startExam()">
+              <span>🚀 Begin Timed Exam Now</span>
+            </button>
+            <button class="btn btn-secondary" onclick="window.CIRE_APP.switchTab('dashboard')">
+              <span>Back to Dashboard</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exam In-Progress Screen -->
+      <div id="mockExamActive" class="exam-screen" style="display: none;">
+        <div class="exam-sticky-bar">
+          <div class="sticky-left">
+            <span class="exam-active-title">CIRE Practice Simulation</span>
+            <span class="q-counter" id="examProgressIndicator">Question 1 of 110</span>
+          </div>
+          <div class="sticky-center">
+            <div class="timer-box" id="examTimerBox">
+              <span class="timer-icon">⏳</span>
+              <span id="examTimerDisplay">02:00:00</span>
+            </div>
+          </div>
+          <div class="sticky-right">
+            <button class="btn btn-sm btn-outline" id="examFlagBtn" onclick="window.CIRE_EXAM.toggleCurrentFlag()">
+              <span id="flagIcon">🏳️</span> <span id="flagText">Flag for Review</span>
+            </button>
+            <button class="btn btn-sm btn-danger" onclick="window.CIRE_EXAM.confirmSubmit()">
+              <span>Finish &amp; Submit</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="exam-layout">
+          <!-- Question Area -->
+          <div class="exam-question-column">
+            <div class="question-container-card">
+              <div class="question-header">
+                <div class="question-meta-tags">
+                  <span class="badge badge-element" id="examQElement">Element 1</span>
+                  <span class="badge badge-sub" id="examQSub">Outcome 1.1</span>
+                  <span class="badge badge-cog" id="examQCog">Understand</span>
+                </div>
+                <span class="q-index-badge" id="examQBadge">Q 1</span>
+              </div>
+
+              <div class="question-body">
+                <h2 class="question-text" id="examQText">Question text appears here...</h2>
+              </div>
+
+              <div class="options-container" id="examQOptions">
+                <!-- Options rendered dynamically -->
+              </div>
+
+              <div class="question-navigation-bar">
+                <button class="btn btn-secondary" id="examPrevBtn" onclick="window.CIRE_EXAM.navigate(-1)">
+                  <span>← Previous</span>
+                </button>
+                <button class="btn btn-secondary" id="examNextBtn" onclick="window.CIRE_EXAM.navigate(1)">
+                  <span>Next →</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigator Sidebar -->
+          <div class="exam-nav-sidebar">
+            <div class="sidebar-header">
+              <h3>Question Navigator</h3>
+              <div class="nav-legend">
+                <span class="legend-item"><span class="dot dot-answered"></span> Answered</span>
+                <span class="legend-item"><span class="dot dot-flagged"></span> Flagged</span>
+                <span class="legend-item"><span class="dot dot-unanswered"></span> Unanswered</span>
+              </div>
+            </div>
+            <div class="navigator-grid" id="examNavigatorGrid">
+              <!-- 110 question buttons -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exam Results & Review Screen -->
+      <div id="mockExamResults" class="exam-screen" style="display: none;">
+        <div class="results-card">
+          <div class="results-banner" id="resultsBanner">
+            <div class="results-badge" id="resultsGradeBadge">PASS</div>
+            <h1 id="resultsTitle">Exam Result: Pass (82%)</h1>
+            <p id="resultsSubtitle">You met the 60% practice target.</p>
+          </div>
+
+          <div class="results-summary-grid">
+            <div class="res-stat-card">
+              <span class="res-stat-value" id="resScoreText">90 / 110</span>
+              <span class="res-stat-label">Total Score</span>
+            </div>
+            <div class="res-stat-card">
+              <span class="res-stat-value" id="resPercentText">81.8%</span>
+              <span class="res-stat-label">Percentage</span>
+            </div>
+            <div class="res-stat-card">
+              <span class="res-stat-value" id="resTimeUsedText">01:34:20</span>
+              <span class="res-stat-label">Time Elapsed</span>
+            </div>
+            <div class="res-stat-card">
+              <span class="res-stat-value" id="resStatusText">PASSED</span>
+              <span class="res-stat-label">CIRO Standard Status</span>
+            </div>
+          </div>
+
+          <div class="results-section">
+            <h3>Diagnostic Performance by Syllabus Element</h3>
+            <div class="element-results-table-container">
+              <table class="results-table">
+                <thead>
+                  <tr>
+                    <th>Element</th>
+                    <th>Topic Area</th>
+                    <th>Score</th>
+                    <th>Accuracy</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="resultsElementTableBody">
+                  <!-- Generated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="results-section">
+            <div class="review-header">
+              <h3>Detailed Question Review</h3>
+              <div class="review-filter-buttons">
+                <button class="btn btn-filter active" onclick="window.CIRE_EXAM.filterReview('all')">All (110)</button>
+                <button class="btn btn-filter" onclick="window.CIRE_EXAM.filterReview('incorrect')">Incorrect Only</button>
+                <button class="btn btn-filter" onclick="window.CIRE_EXAM.filterReview('flagged')">Flagged Only</button>
+              </div>
+            </div>
+            <div class="review-questions-list" id="resultsReviewList">
+              <!-- Rendered question by question with answers and full explanations -->
+            </div>
+          </div>
+
+          <div class="results-actions">
+            <button class="btn btn-primary" onclick="window.CIRE_EXAM.startExam()">
+              <span>🔄 Take Another Mock Exam</span>
+            </button>
+            <button class="btn btn-secondary" onclick="window.CIRE_APP.switchTab('dashboard')">
+              <span>Back to Dashboard</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TOPIC PRACTICE / SYLLABUS DRILL VIEW -->
+    <section id="view-topic-practice" class="tab-view">
+      <div class="practice-container">
+        <div class="practice-controls-card">
+          <h2>Topic Practice &amp; Syllabus Drilling</h2>
+          <p>Choose an element to focus on, configure test parameters, and practice with immediate explanations.</p>
+
+          <div class="practice-form-grid">
+            <div class="form-group">
+              <label for="practiceElementSelect">Select Syllabus Element:</label>
+              <select id="practiceElementSelect" class="form-control">
+                <!-- Populated via JS -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="practiceSubOutcomeSelect">Sub-Outcome / Learning Goal:</label>
+              <select id="practiceSubOutcomeSelect" class="form-control">
+                <option value="all">All Sub-Outcomes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="practiceCountSelect">Number of Questions:</label>
+              <select id="practiceCountSelect" class="form-control">
+                <option value="10">10 Questions (Quick Check)</option>
+                <option value="25" selected>25 Questions (Standard)</option>
+                <option value="50">50 Questions (Deep Drill)</option>
+                <option value="100">100 Questions (Endurance)</option>
+                <option value="all">All Available</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="practiceCogSelect">Cognitive Level Filter:</label>
+              <select id="practiceCogSelect" class="form-control">
+                <option value="all">All Cognitive Levels</option>
+                <option value="Remember">Remember (Facts &amp; Rules)</option>
+                <option value="Understand">Understand (Comprehension &amp; Concepts)</option>
+                <option value="Apply">Apply (Calculations &amp; Implementation)</option>
+                <option value="Analyze">Analyze (Scenarios &amp; Distinctions)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="practice-actions">
+            <button class="btn btn-primary" onclick="window.CIRE_APP.startTopicSession()">
+              <span>🎯 Start Practice Session</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Practice Active Session -->
+        <div id="practiceActiveContainer" style="display: none;">
+          <div class="practice-active-header">
+            <div class="practice-info">
+              <span id="practiceTopicTitle" class="practice-title">Element 1 Practice</span>
+              <span id="practiceProgress" class="badge">Question 1 of 25</span>
+            </div>
+            <div class="practice-stats">
+              <span>Score: <strong id="practiceLiveScore">0 / 0 (0%)</strong></span>
+              <button class="btn btn-sm btn-outline" onclick="window.CIRE_APP.endTopicSession()">End Session</button>
+            </div>
+          </div>
+
+          <div class="question-container-card" id="practiceQuestionCard">
+            <!-- Question rendered dynamically with instant feedback -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FLASHCARDS VIEW -->
+    <section id="view-flashcards" class="tab-view">
+      <div class="flashcards-container">
+        <div class="flashcard-header-bar">
+          <div>
+            <h2>Core Concept Flashcards</h2>
+            <p>Test your memory on essential CIRO rules, thresholds, and regulatory formulas.</p>
+          </div>
+          <div class="flashcard-element-filter">
+            <label for="flashcardElementSelect">Filter Element:</label>
+            <select id="flashcardElementSelect" class="form-control form-control-sm">
+              <option value="all">All Elements</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flashcard-viewport">
+          <div class="flashcard-card" id="flashcardBox" onclick="window.CIRE_CARDS.flip()">
+            <div class="flashcard-inner">
+              <div class="flashcard-front">
+                <div class="card-meta">
+                  <span class="badge" id="cardElementBadge">Element 1</span>
+                  <span class="badge badge-cog" id="cardOutcomeBadge">1.1</span>
+                </div>
+                <div class="card-content">
+                  <h3 id="cardQuestionText">Card prompt goes here...</h3>
+                </div>
+                <div class="card-hint">Click or press Space to reveal answer 🔄</div>
+              </div>
+              <div class="flashcard-back">
+                <div class="card-meta">
+                  <span class="badge badge-success">Correct Answer &amp; Rationale</span>
+                </div>
+                <div class="card-content">
+                  <h4 id="cardAnswerText">Correct answer text</h4>
+                  <div class="card-explanation" id="cardExplanationText">Detailed explanation...</div>
+                </div>
+                <div class="card-hint">Click or press Space to flip back 🔄</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flashcard-nav-controls">
+            <button class="btn btn-secondary" onclick="window.CIRE_CARDS.prev()">← Previous</button>
+            <span class="card-counter" id="cardCounterText">1 / 100</span>
+            <button class="btn btn-secondary" onclick="window.CIRE_CARDS.next()">Next →</button>
+          </div>
+
+          <div class="flashcard-rating-actions">
+            <button class="btn btn-danger btn-sm" onclick="window.CIRE_CARDS.markReview()">
+              <span>⚠️ Needs Review</span>
+            </button>
+            <button class="btn btn-success btn-sm" onclick="window.CIRE_CARDS.markMastered()">
+              <span>✅ Mastered / Got It!</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. QUESTION BANK EXPLORER -->
+    <section id="view-bank-explorer" class="tab-view">
+      <div class="bank-container">
+        <div class="bank-filter-card">
+          <div class="search-bar-row">
+            <input type="text" id="bankSearchInput" class="form-control search-input" placeholder="🔍 Search questions by keyword, rule (e.g. UMIR 4.1, CIPF, OBSI, margin, gross-up)...">
+            <button class="btn btn-primary" onclick="window.CIRE_BANK.search()">Search</button>
+            <button class="btn btn-secondary" onclick="window.CIRE_BANK.resetFilters()">Reset</button>
+          </div>
+
+          <div class="bank-filters-grid">
+            <div class="filter-col">
+              <label for="bankElementFilter">Element:</label>
+              <select id="bankElementFilter" class="form-control form-control-sm">
+                <option value="all">All Elements</option>
+              </select>
+            </div>
+            <div class="filter-col">
+              <label for="bankCogFilter">Cognitive Level:</label>
+              <select id="bankCogFilter" class="form-control form-control-sm">
+                <option value="all">All Cognitive Levels</option>
+                <option value="Remember">Remember</option>
+                <option value="Understand">Understand</option>
+                <option value="Apply">Apply</option>
+                <option value="Analyze">Analyze</option>
+              </select>
+            </div>
+            <div class="filter-col">
+              <label for="bankStatusFilter">Question Status:</label>
+              <select id="bankStatusFilter" class="form-control form-control-sm">
+                <option value="all">All Statuses</option>
+                <option value="unseen">Unanswered (Unseen)</option>
+                <option value="correct">Previously Correct</option>
+                <option value="incorrect">Previously Incorrect</option>
+                <option value="flagged">Flagged / Bookmarked</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="bank-results-header">
+          <span id="bankResultsCount">Loading questions</span>
+          <div class="pagination-controls" id="bankPaginationTop">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <div class="bank-questions-list" id="bankQuestionsList">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <div class="bank-results-footer">
+          <div class="pagination-controls" id="bankPaginationBottom">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SETTINGS & GITHUB HOSTING GUIDE -->
+    <section id="view-settings" class="tab-view">
+      <div class="settings-container">
+        <!-- GitHub Deployment Card -->
+        <div class="settings-card">
+          <div class="card-badge-highlight">Free Hosting</div>
+          <h2>Deploy to GitHub Pages in 2 Minutes</h2>
+          <p>This entire exam prep platform is 100% static, client-side, and requires no backend server or build pipeline. You can upload it to GitHub and have your personal exam prep site live immediately.</p>
+
+          <div class="deployment-steps">
+            <div class="step-box">
+              <div class="step-num">1</div>
+              <div class="step-text">
+                <strong>Create a new GitHub Repository</strong>
+                <p>Log in to <a href="https://github.com" target="_blank">GitHub.com</a>, click <em>New Repository</em>, name it (e.g. <code>ciro-cire-exam-prep</code>), and keep it Public or Private.</p>
+              </div>
+            </div>
+            <div class="step-box">
+              <div class="step-num">2</div>
+              <div class="step-text">
+                <strong>Upload / Push your project files</strong>
+                <p>Upload all files in this project folder (including <code>index.html</code>, <code>css/</code>, <code>js/</code>, <code>data/</code>) to the repository branch (e.g. <code>main</code>).</p>
+                <pre><code>git init
+git add .
+git commit -m "Deploy CIRE unique questions exam prep"
+git branch -M main
+git remote add origin https://github.com/&lt;your-username&gt;/ciro-cire-exam-prep.git
+git push -u origin main</code></pre>
+              </div>
+            </div>
+            <div class="step-box">
+              <div class="step-num">3</div>
+              <div class="step-text">
+                <strong>Enable GitHub Pages in Settings</strong>
+                <p>Go to your repository's <strong>Settings &gt; Pages</strong>. Under <em>Build and deployment</em>, set Source to <strong>Deploy from a branch</strong>, select <code>main</code> branch and <code>/ (root)</code>, and click <strong>Save</strong>.</p>
+                <p>Within 60 seconds, your site will be live at: <code>https://&lt;your-username&gt;.github.io/ciro-cire-exam-prep/</code></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Backup & Reset Card -->
+        <div class="settings-card">
+          <h2>Your Study Data Management</h2>
+          <p>All your practice scores, mock exam history, and flagged questions are securely stored in your browser's <code>localStorage</code>. You can export a JSON backup to restore on another device, or reset your progress.</p>
+
+          <div class="settings-actions-grid">
+            <div class="action-card">
+              <h3>Export Study Data</h3>
+              <p>Save all your exam history, bookmarks, and scores as a JSON file.</p>
+              <button class="btn btn-secondary" onclick="window.CIRE_STORAGE.exportBackup()">
+                <span>📥 Export Progress (JSON)</span>
+              </button>
+            </div>
+            <div class="action-card">
+              <h3>Import Study Data</h3>
+              <p>Restore your progress from a previously exported JSON backup.</p>
+              <input type="file" id="importFileInput" style="display: none;" accept=".json" onchange="window.CIRE_STORAGE.importBackup(event)">
+              <button class="btn btn-secondary" onclick="document.getElementById('importFileInput').click()">
+                <span>📤 Import Progress (JSON)</span>
+              </button>
+            </div>
+            <div class="action-card danger-card">
+              <h3>Reset Study History</h3>
+              <p>Clear all answer records, exam history, and bookmarks back to default.</p>
+              <button class="btn btn-danger" onclick="window.CIRE_STORAGE.resetAllData()">
+                <span>⚠️ Reset All Study Data</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Submit Confirmation Modal -->
+  <div id="submitModal" class="modal-overlay" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Confirm Exam Submission</h3>
+        <button class="close-btn" onclick="window.CIRE_EXAM.closeSubmitModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to finish and submit your exam for grading?</p>
+        <div class="modal-stats-row">
+          <div class="m-stat">
+            <span class="m-val" id="modalAnsweredCount">0</span>
+            <span class="m-lbl">Answered</span>
+          </div>
+          <div class="m-stat">
+            <span class="m-val" id="modalUnansweredCount">110</span>
+            <span class="m-lbl">Unanswered</span>
+          </div>
+          <div class="m-stat">
+            <span class="m-val" id="modalFlaggedCount">0</span>
+            <span class="m-lbl">Flagged for Review</span>
+          </div>
+        </div>
+        <p class="modal-note" id="modalWarningText">Any unanswered questions will be marked incorrect.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="window.CIRE_EXAM.closeSubmitModal()">Return to Exam</button>
+        <button class="btn btn-primary btn-danger" onclick="window.CIRE_EXAM.finalizeSubmit()">Submit Exam Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Scripts: Manifest + All 9 Elements (unique Questions) -->
+  <script src="data/questions_manifest.js"></script>
+  <script src="data/questions_e1.js"></script>
+  <script src="data/questions_e2.js"></script>
+  <script src="data/questions_e3.js"></script>
+  <script src="data/questions_e4.js"></script>
+  <script src="data/questions_e5.js"></script>
+  <script src="data/questions_e6.js"></script>
+  <script src="data/questions_e7.js"></script>
+  <script src="data/questions_e8.js"></script>
+  <script src="data/questions_e9.js"></script>
+
+  <script src="data/question_sources.js"></script>
+  <script src="data/question_aliases.js"></script>
+  <script src="js/questionBank.js"></script>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/examEngine.js"></script>
+  <script src="js/bankViewer.js"></script>
+  <script src="js/flashcards.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
