@@ -12,14 +12,16 @@
     // Get all user answers: { [qId]: { selected: idx, isCorrect: bool, timestamp: num } }
     getAnswers() {
       try {
-        return JSON.parse(localStorage.getItem(KEYS.ANSWERS) || '{}');
+        return window.CIRE_QUESTION_BANK.answers(JSON.parse(localStorage.getItem(KEYS.ANSWERS) || '{}'));
       } catch (e) {
         return {};
       }
     },
 
     saveAnswer(qId, selectedIdx, isCorrect) {
-      const answers = this.getAnswers();
+      let answers;
+      try { answers = JSON.parse(localStorage.getItem(KEYS.ANSWERS) || '{}'); } catch (_) { answers = {}; }
+      if (!answers || typeof answers !== 'object' || Array.isArray(answers)) answers = {};
       answers[qId] = {
         selected: selectedIdx,
         isCorrect: isCorrect,
@@ -32,14 +34,19 @@
     // Flagged questions (Set)
     getFlagged() {
       try {
-        return new Set(JSON.parse(localStorage.getItem(KEYS.FLAGGED) || '[]'));
+        return window.CIRE_QUESTION_BANK.flags(JSON.parse(localStorage.getItem(KEYS.FLAGGED) || '[]'));
       } catch (e) {
         return new Set();
       }
     },
 
     toggleFlag(qId) {
-      const flagged = this.getFlagged();
+      let raw;
+      try { raw = JSON.parse(localStorage.getItem(KEYS.FLAGGED) || '[]'); } catch (_) { raw = []; }
+      if (!Array.isArray(raw)) raw = [];
+      const wasFlagged = this.getFlagged().has(qId);
+      const flagged = new Set(raw.filter(id => window.CIRE_QUESTION_BANK.resolve(id) !== qId));
+      if (wasFlagged) flagged.add(qId);
       if (flagged.has(qId)) {
         flagged.delete(qId);
       } else {
@@ -73,14 +80,17 @@
     // Flashcards
     getFlashcardReviews() {
       try {
-        return JSON.parse(localStorage.getItem(KEYS.FLASHCARDS) || '{}');
+        return window.CIRE_QUESTION_BANK.reviews(JSON.parse(localStorage.getItem(KEYS.FLASHCARDS) || '{}'));
       } catch (e) {
         return {};
       }
     },
 
     setFlashcardRating(qId, rating) {
-      const reviews = this.getFlashcardReviews();
+      let reviews;
+      try { reviews = JSON.parse(localStorage.getItem(KEYS.FLASHCARDS) || '{}'); } catch (_) { reviews = {}; }
+      if (!reviews || typeof reviews !== 'object' || Array.isArray(reviews)) reviews = {};
+      Object.keys(reviews).forEach(id => { if (window.CIRE_QUESTION_BANK.resolve(id) === qId) delete reviews[id]; });
       reviews[qId] = rating; // 'mastered' or 'review'
       localStorage.setItem(KEYS.FLASHCARDS, JSON.stringify(reviews));
     },
@@ -97,12 +107,13 @@
     // Backup Export
     exportBackup() {
       const backup = {
-        version: '1.0',
+        version: '1.1',
+        bankVersion: window.CIRE_MANIFEST.bankVersion,
         exportedAt: new Date().toISOString(),
-        answers: this.getAnswers(),
-        flagged: Array.from(this.getFlagged()),
+        answers: JSON.parse(localStorage.getItem(KEYS.ANSWERS) || '{}'),
+        flagged: JSON.parse(localStorage.getItem(KEYS.FLAGGED) || '[]'),
         mockHistory: this.getMockHistory(),
-        flashcards: this.getFlashcardReviews()
+        flashcards: JSON.parse(localStorage.getItem(KEYS.FLASHCARDS) || '{}')
       };
       const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);

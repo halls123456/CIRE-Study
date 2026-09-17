@@ -1,8 +1,8 @@
-/* CIRO CIRE Manifest - Auto-generated */
+/* CIRE practice bank manifest */
 window.CIRE_MANIFEST = {
   "title": "CIRO Canadian Investment Regulatory Exam (CIRE) Question Bank",
   "syllabus": "January 2025",
-  "totalQuestions": 3000,
+  "totalQuestions": 193,
   "examDurationMinutes": 120,
   "examQuestionsCount": 110,
   "passingScorePercent": 60,
@@ -12,7 +12,7 @@ window.CIRE_MANIFEST = {
       "title": "Overview of Canadian Securities Regulatory Framework",
       "shortTitle": "Regulatory Framework",
       "examWeight": 11,
-      "bankCount": 300,
+      "bankCount": 20,
       "subOutcomes": [
         {
           "code": "1.1",
@@ -65,7 +65,7 @@ window.CIRE_MANIFEST = {
       "title": "Prospective Client Relationships",
       "shortTitle": "Prospective Clients",
       "examWeight": 11,
-      "bankCount": 300,
+      "bankCount": 20,
       "subOutcomes": [
         {
           "code": "2.1",
@@ -118,7 +118,7 @@ window.CIRE_MANIFEST = {
       "title": "Scope of Client Relationships",
       "shortTitle": "Scope of Relationship",
       "examWeight": 17,
-      "bankCount": 465,
+      "bankCount": 29,
       "subOutcomes": [
         {
           "code": "3.1",
@@ -195,7 +195,7 @@ window.CIRE_MANIFEST = {
       "title": "Client Complaint Handling and Reporting",
       "shortTitle": "Complaint Handling",
       "examWeight": 6,
-      "bankCount": 165,
+      "bankCount": 11,
       "subOutcomes": [
         {
           "code": "4.1",
@@ -232,7 +232,7 @@ window.CIRE_MANIFEST = {
       "title": "Market and Company Analysis",
       "shortTitle": "Market & Company Analysis",
       "examWeight": 9,
-      "bankCount": 245,
+      "bankCount": 23,
       "subOutcomes": [
         {
           "code": "5.1",
@@ -277,7 +277,7 @@ window.CIRE_MANIFEST = {
       "title": "Market Integrity, Trade Execution and Settlement",
       "shortTitle": "Market Integrity & Trading",
       "examWeight": 13,
-      "bankCount": 355,
+      "bankCount": 23,
       "subOutcomes": [
         {
           "code": "6.1",
@@ -334,7 +334,7 @@ window.CIRE_MANIFEST = {
       "title": "Securities, Managed Products and Mutual Funds",
       "shortTitle": "Securities & Products",
       "examWeight": 21,
-      "bankCount": 575,
+      "bankCount": 28,
       "subOutcomes": [
         {
           "code": "7.1",
@@ -391,7 +391,7 @@ window.CIRE_MANIFEST = {
       "title": "Derivatives",
       "shortTitle": "Derivatives",
       "examWeight": 6,
-      "bankCount": 165,
+      "bankCount": 15,
       "subOutcomes": [
         {
           "code": "8.1",
@@ -432,7 +432,7 @@ window.CIRE_MANIFEST = {
       "title": "Conflicts of Interest and Ethics",
       "shortTitle": "Conflicts of Interest & Ethics",
       "examWeight": 16,
-      "bankCount": 430,
+      "bankCount": 24,
       "subOutcomes": [
         {
           "code": "9.1",
@@ -484,5 +484,8 @@ window.CIRE_MANIFEST = {
         }
       ]
     }
-  ]
+  ],
+  "bankVersion": "2026-09-16",
+  "syllabusUrl": "https://www.ciro.ca/media/12246/download",
+  "passingScoreNote": "60% is this app's practice target, not a verified official passing score."
 };

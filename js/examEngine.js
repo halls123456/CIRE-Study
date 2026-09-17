@@ -1,4 +1,4 @@
-/* Official Mock Exam Simulation Engine */
+/* Independent Mock Exam Simulation Engine */
 (function() {
   const WEIGHTS = {
     1: 11,
@@ -287,8 +287,8 @@
       banner.className = res.passed ? 'results-banner pass' : 'results-banner fail';
       document.getElementById('resultsGradeBadge').textContent = res.passed ? 'PASS' : 'FAIL';
       document.getElementById('resultsTitle').textContent = `Exam Result: ${res.passed ? 'Passed' : 'Not Passed'} (${res.percentage}%)`;
-      document.getElementById('resultsSubtitle').textContent = res.passed 
-        ? 'Congratulations! You met the 60% CIRO passing standard.' 
+      document.getElementById('resultsSubtitle').textContent = res.passed
+        ? "You met the app's 60% practice target."
         : 'Review your weak elements below and attempt another simulation.';
 
       document.getElementById('resScoreText').textContent = `${res.score} / ${res.total}`;
@@ -368,7 +368,7 @@
               }).join('')}
             </div>
             <div class="review-explanation">
-              <strong>Regulatory Rationale:</strong> ${q.explanation}
+              <strong>Regulatory Rationale:</strong> ${window.CIRE_QUESTION_BANK.explanationHTML(q)}
             </div>
           </div>
         `;

@@ -72,7 +72,7 @@
       document.getElementById('cardQuestionText').textContent = q.question;
 
       document.getElementById('cardAnswerText').textContent = q.options[q.correct];
-      document.getElementById('cardExplanationText').textContent = q.explanation;
+      document.getElementById('cardExplanationText').innerHTML = window.CIRE_QUESTION_BANK.explanationHTML(q);
       document.getElementById('cardCounterText').textContent = `${cardIndex + 1} / ${cardList.length}`;
     },
 

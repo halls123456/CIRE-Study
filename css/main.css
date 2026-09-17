@@ -388,3 +388,9 @@ body {
   .header-container { flex-direction: column; align-items: stretch; }
   .nav-tabs { overflow-x: auto; white-space: nowrap; }
 }
+/* Keep study-reference links readable in both themes. */
+.text-muted a, .bank-q-explanation a, .review-explanation a, #cardExplanationText a {
+  color: var(--accent-hover);
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
